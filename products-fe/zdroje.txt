@@ -1,2 +1,8 @@
 https://www.codevertiser.com/reactjs-responsive-navbar/
 https://mui.com/material-ui/react-app-bar/
+ npm cache clean --force
+
+ https://vitejs.dev/config/server-options.html#server-proxy
+ https://stackoverflow.com/questions/48291950/proxy-not-working-for-react-and-node
+
+ https://www.freecodecamp.org/news/how-to-integrate-material-ui-data-grid-in-react-using-data-from-a-rest-api/#api-integration-and-consumption
