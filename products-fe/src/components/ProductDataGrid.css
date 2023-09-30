@@ -1,0 +1,8 @@
+.detailbutton {
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  color: #069;
+}

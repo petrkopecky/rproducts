@@ -3,6 +3,8 @@ import ProductsDataGrid from "./ProductsDataGrid";
 import ProductDetail from "./ProductDetail";
 import { IProduct } from "../model/IProduct";
 import React from "react";
+import { Button } from "@mui/base";
+import "./Products.css";
 
 export default function Products() {
   const [productDetail, setProductDetail] = React.useState<IProduct>();
@@ -12,9 +14,12 @@ export default function Products() {
     setProductDetail(product);
   }
   return (
-    <Box sx={{ height: 400, width: "100%" }}>
-      <ProductsDataGrid onDetail={onDetail} />
-      <ProductDetail product={productDetail} />
-    </Box>
+    <div>
+      <Box className="datagridbox">
+        <Button className="addbutton">add new product</Button>
+        <ProductsDataGrid onDetail={onDetail} />
+        <ProductDetail product={productDetail} />
+      </Box>
+    </div>
   );
 }

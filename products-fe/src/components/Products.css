@@ -1,0 +1,12 @@
+.addbutton {
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  color: #069;
+}
+.datagridbox {
+  height: 400;
+  width: "100%";
+}

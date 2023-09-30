@@ -9,16 +9,16 @@ export default function Navbar() {
         <div className="nav-elements">
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">home</NavLink>
             </li>
             <li>
-              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/products">products</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about">about</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/contact">contact</NavLink>
             </li>
           </ul>
         </div>

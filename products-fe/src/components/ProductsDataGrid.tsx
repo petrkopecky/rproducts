@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Button } from "@mui/material";
+import { Button } from "@mui/base";
 import { IProduct } from "../model/IProduct";
+import "./ProductDataGrid.css";
 
 interface FormProps {
   onDetail: (data: IProduct) => void;
@@ -20,16 +21,13 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
     return (
       <strong>
         <Button
-          variant="contained"
-          color="primary"
-          size="small"
-          style={{ marginLeft: 16 }}
+          className="detailbutton"
           onClick={() => {
             console.log(params.row);
             handleOnDetail(params.row);
           }}
         >
-          More Info
+          detail
         </Button>
       </strong>
     );
