@@ -8,8 +8,17 @@
 }
 
 .datagriddiv {
+  height: 400px;
   width: "100%";
 }
 
-.header {
+.datagridheader {
+  font-weight: bold;
+  color: black;
+}
+
+.css-t89xny-MuiDataGrid-columnHeaderTitle {
+}
+
+.datagrid {
 }

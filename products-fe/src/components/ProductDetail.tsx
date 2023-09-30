@@ -15,22 +15,24 @@ export default function ProductDetail({ product, className }: FormProps) {
           <b>product detail</b>
         </p>
         <table className="propertytable">
-          <tr>
-            <td>id:</td>
-            <td>{product && product.id}</td>
-          </tr>
-          <tr>
-            <td>name:</td>
-            <td>{product && product.name}</td>
-          </tr>
-          <tr>
-            <td>price:</td>
-            <td>{product && product.price}</td>
-          </tr>
-          <tr>
-            <td>description:</td>
-            <td>{product && product.description}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>id:</td>
+              <td>{product && product.id}</td>
+            </tr>
+            <tr>
+              <td>name:</td>
+              <td>{product && product.name}</td>
+            </tr>
+            <tr>
+              <td>price:</td>
+              <td>{product && product.price}</td>
+            </tr>
+            <tr>
+              <td>description:</td>
+              <td>{product && product.description}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );

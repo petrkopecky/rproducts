@@ -6,3 +6,10 @@
   padding: 10px;
   color: #069;
 }
+.propertytable {
+  padding: 10px;
+}
+
+.errorMessage {
+  color: red;
+}

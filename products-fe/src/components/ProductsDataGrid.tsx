@@ -43,19 +43,19 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
     {
       field: "id",
       headerName: "id",
-      headerClassName: "header",
+      headerClassName: "datagridheader",
     },
     {
       field: "name",
       headerName: "name",
       width: 150,
-      headerClassName: "header",
+      headerClassName: "datagridheader",
     },
     {
       field: "price",
       headerName: "price",
       width: 150,
-      headerClassName: "header",
+      headerClassName: "datagridheader",
     },
     {
       field: "detail",
@@ -63,7 +63,7 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
       width: 150,
       renderCell: renderDetailsButton,
       disableClickEventBubbling: true,
-      headerClassName: "header",
+      headerClassName: "datagridheader",
     },
   ];
 
@@ -76,6 +76,7 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
           pagination: { paginationModel: { pageSize: 5 } },
         }}
         pageSizeOptions={[5, 10]}
+        className="datagrid"
       />
     </div>
   );
