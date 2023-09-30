@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import ProductsDataGrid from "./ProductsDataGrid";
 import ProductDetail from "./ProductDetail";
 import { IProduct } from "../model/IProduct";
-import React from "react";
+import { useState } from "react";
 import { Button } from "@mui/base";
 import "./Products.css";
 import ProductAdd from "./ProductAdd";
@@ -13,8 +13,8 @@ enum FormMode {
 }
 
 export default function Products() {
-  const [formMode, setFormMode] = React.useState<FormMode>(FormMode.view);
-  const [productDetail, setProductDetail] = React.useState<IProduct>();
+  const [formMode, setFormMode] = useState<FormMode>(FormMode.view);
+  const [productDetail, setProductDetail] = useState<IProduct>();
   //{id: -1,price: 0, name: "adfa", description: "adfa", }
   function onDetail(product: IProduct) {
     console.log(`onDetail ${product.id}`);

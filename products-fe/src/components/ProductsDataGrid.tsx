@@ -53,8 +53,15 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
   ];
 
   return (
-    <div style={{ height: 300, width: "100%" }}>
-      <DataGrid rows={tableData} columns={columns} />
+    <div className="datagriddiv">
+      <DataGrid
+        rows={tableData}
+        columns={columns}
+        initialState={{
+          pagination: { paginationModel: { pageSize: 5 } },
+        }}
+        pageSizeOptions={[5, 10, 25]}
+      />
     </div>
   );
 }
