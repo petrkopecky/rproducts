@@ -26,7 +26,6 @@ export default function ProductAdd({ onProductAdd }: FormProps) {
       })
         .then((response) => {
           if (!response.ok) {
-            console.log(response);
             throw new Error(
               response.url + " " + response.status + " " + response.statusText
             );

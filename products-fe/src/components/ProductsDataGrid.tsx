@@ -10,10 +10,23 @@ interface FormProps {
 
 export default function ProductsDataGrid({ onDetail }: FormProps) {
   const [tableData, setTableData] = useState([]);
+  const [errorMessage, setErrorMessage] = useState<String>();
   useEffect(() => {
     fetch("/api/products")
-      .then((data) => data.json())
-      .then((data) => setTableData(data));
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(
+          response.url + " " + response.status + " " + response.statusText
+        );
+      })
+      //.then((data) => data.json())
+      .then((data) => setTableData(data))
+      .catch((error) => {
+        console.log(error.message);
+        setErrorMessage(error.message);
+      });
   }, []);
   console.log(tableData);
 
@@ -69,6 +82,7 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
 
   return (
     <div className="datagriddiv">
+      <p className="errorMessage">{errorMessage}</p>
       <DataGrid
         rows={tableData}
         columns={columns}

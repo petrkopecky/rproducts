@@ -22,3 +22,7 @@
 
 .datagrid {
 }
+
+.errorMessage {
+  color: red;
+}
