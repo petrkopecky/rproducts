@@ -1,16 +1,8 @@
-.addbutton {
+.button {
   background-color: white;
   border: none;
   text-decoration: underline;
   cursor: pointer;
   padding: 10px;
   color: #069;
-}
-.datagridbox {
-  height: 400;
-  width: "100%";
-}
-
-.productdetail {
-  padding: 10px;
 }

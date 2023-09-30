@@ -5,21 +5,55 @@ import { IProduct } from "../model/IProduct";
 import React from "react";
 import { Button } from "@mui/base";
 import "./Products.css";
+import ProductAdd from "./ProductAdd";
+
+enum FormMode {
+  view,
+  add,
+}
 
 export default function Products() {
+  const [formMode, setFormMode] = React.useState<FormMode>(FormMode.view);
   const [productDetail, setProductDetail] = React.useState<IProduct>();
   //{id: -1,price: 0, name: "adfa", description: "adfa", }
   function onDetail(product: IProduct) {
     console.log(`onDetail ${product.id}`);
     setProductDetail(product);
   }
-  return (
-    <div>
-      <Box className="datagridbox">
-        <Button className="addbutton">add new product</Button>
-        <ProductsDataGrid onDetail={onDetail} />
-        <ProductDetail product={productDetail} />
-      </Box>
-    </div>
-  );
+  function onAddButton() {
+    setFormMode(FormMode.add);
+  }
+
+  function onProductAdd() {
+    setFormMode(FormMode.view);
+  }
+
+  function renderViewMode() {
+    return (
+      <div>
+        <Box className="datagridbox">
+          <Button className="addbutton" onClick={onAddButton}>
+            add new product
+          </Button>
+          <ProductsDataGrid onDetail={onDetail} />
+          <ProductDetail product={productDetail} className="productdetail" />
+        </Box>
+      </div>
+    );
+  }
+
+  function renderAddMode() {
+    return (
+      <div>
+        <ProductAdd onProductAdd={onProductAdd}></ProductAdd>
+      </div>
+    );
+  }
+
+  if (formMode === FormMode.view) {
+    return renderViewMode();
+  }
+  if (formMode === FormMode.add) {
+    return renderAddMode();
+  }
 }
