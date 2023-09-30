@@ -30,15 +30,13 @@ export default function Products() {
 
   function renderViewMode() {
     return (
-      <div>
-        <Box className="datagridbox">
-          <Button className="addbutton" onClick={onAddButton}>
-            add new product
-          </Button>
-          <ProductsDataGrid onDetail={onDetail} />
-          <ProductDetail product={productDetail} className="productdetail" />
-        </Box>
-      </div>
+      <Box className="datagridbox">
+        <Button className="addbutton" onClick={onAddButton}>
+          add new product
+        </Button>
+        <ProductsDataGrid onDetail={onDetail} />
+        <ProductDetail product={productDetail} className="productdetail" />
+      </Box>
     );
   }
 

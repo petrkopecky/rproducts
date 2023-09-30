@@ -24,7 +24,7 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
           className="detailbutton"
           onClick={() => {
             console.log(params.row);
-            handleOnDetail(params.row);
+            onDetailClick(params.row);
           }}
         >
           detail
@@ -33,22 +33,37 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
     );
   };
 
-  function handleOnDetail(row) {
+  function onDetailClick(row) {
     let product = { ...row } as IProduct;
     console.log(product.id);
     onDetail(product);
   }
 
   const columns = [
-    { field: "id", headerName: "id" },
-    { field: "name", headerName: "name", width: 150 },
-    { field: "price", headerName: "price", width: 150 },
+    {
+      field: "id",
+      headerName: "id",
+      headerClassName: "header",
+    },
+    {
+      field: "name",
+      headerName: "name",
+      width: 150,
+      headerClassName: "header",
+    },
+    {
+      field: "price",
+      headerName: "price",
+      width: 150,
+      headerClassName: "header",
+    },
     {
       field: "detail",
       headerName: "detail",
       width: 150,
       renderCell: renderDetailsButton,
       disableClickEventBubbling: true,
+      headerClassName: "header",
     },
   ];
 
@@ -60,7 +75,7 @@ export default function ProductsDataGrid({ onDetail }: FormProps) {
         initialState={{
           pagination: { paginationModel: { pageSize: 5 } },
         }}
-        pageSizeOptions={[5, 10, 25]}
+        pageSizeOptions={[5, 10]}
       />
     </div>
   );
